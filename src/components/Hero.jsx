@@ -49,7 +49,7 @@ const Hero = () => {
             animate="visible"
           >
             <span className="hero__badge-dot" />
-            Disponible para nuevas oportunidades
+            Disponible para nuevas oportunidades laborales inmediatas.
           </motion.div>
 
           {/* Nombre grande */}
