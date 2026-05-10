@@ -1,0 +1,247 @@
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 0 60px;
+  position: relative;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ── Badge de disponibilidad ── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(0, 255, 135, 0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
+
+.hero__badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── Nombre ── */
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 82px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.hero__name-last {
+  /* Nombre con efecto de recorte en gradiente */
+  background: linear-gradient(135deg, var(--accent) 0%, #00c96a 60%, #007a40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Título profesional ── */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* ── Bio ── */
+.hero__bio {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ── Botones CTA ── */
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.hero__btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: transform var(--transition), opacity var(--transition),
+    box-shadow var(--transition);
+}
+
+.hero__btn--primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.hero__btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 255, 135, 0.3);
+}
+
+.hero__btn--secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.hero__btn--secondary:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Contacto rápido ── */
+.hero__contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero__contact-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.hero__contact-link:hover { color: var(--accent); }
+
+.hero__contact-sep { color: var(--text-muted); }
+
+.hero__contact-location {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Grid de stats ── */
+.hero__stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hero__stat {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.hero__stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.hero__stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Card de ubicación (ocupa 2 columnas) */
+.hero__location-card {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+.hero__location-icon {
+  font-size: 30px;
+}
+
+.hero__location-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.hero__location-country {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Indicador de scroll ── */
+.hero__scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: default;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero__location-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero__stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero__location-card {
+    grid-column: 1 / -1;
+  }
+}

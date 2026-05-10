@@ -1,0 +1,6 @@
+# Configuración de Netlify para SPA con React
+# Redirige todas las rutas al index.html para que React Router funcione
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

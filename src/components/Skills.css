@@ -1,0 +1,165 @@
+/* ============================================================
+   SKILLS
+   ============================================================ */
+
+.skills__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Título de bloque */
+.skills__block-title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Habilidades técnicas ── */
+.skills__technical {
+  padding: 32px;
+}
+
+.skills__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill__bar-item {
+  width: 100%;
+}
+
+.skill__bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.skill__bar-name {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.skill__bar-level {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Pista de la barra */
+.skill__bar-track {
+  height: 3px;
+  background: var(--bg-card-2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Relleno animado */
+.skill__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(0, 255, 135, 0.5) 100%);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Brillo en el extremo de la barra */
+.skill__bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* ── Habilidades blandas ── */
+.skills__soft-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills__block-title--right {
+  margin-bottom: 0;
+}
+
+.skills__soft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.skill__soft-card {
+  padding: 18px;
+  cursor: default;
+  border-radius: var(--radius-md);
+}
+
+.skill__soft-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Tarjeta de idiomas */
+.skills__languages {
+  padding: 20px 24px;
+}
+
+.skills__lang-title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.skills__lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills__lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.skills__lang-level {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--font-display);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .skills__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__soft-grid {
+    grid-template-columns: 1fr;
+  }
+}
