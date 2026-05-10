@@ -112,7 +112,7 @@ const Skills = () => {
                 </div>
                 <div className="skills__lang-item">
                   <span>Inglés</span>
-                  <span className="skills__lang-level">Básico</span>
+                  <span className="skills__lang-level">Intermedio</span>
                 </div>
               </div>
             </div>
